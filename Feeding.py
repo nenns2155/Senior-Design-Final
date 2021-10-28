@@ -68,6 +68,10 @@ class Ui_Feeding(object):
         self.buttonBox.rejected.connect(Dialog.reject)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
+        self.Add.clicked.connect(lambda: self.Add.setText("WOW"))
+
+        
+
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))

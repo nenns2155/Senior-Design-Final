@@ -10,6 +10,7 @@ from Feeding import *
 from Backend import *
 
 from PyQt5 import QtCore, QtGui, QtWidgets
+from Feeding import Ui_Feeding as Feeding
 
 
 class Ui_Main(object):
@@ -42,13 +43,19 @@ class Ui_Main(object):
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
-        self.Feeding.clicked.connect(Ui_Feeding.setupUi(Ui_Feeding,Dialog))
+        self.Feeding.clicked.connect(self.open_Feeding)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         self.Feeding.setText(_translate("MainWindow", "Feeding"))
         self.Weight.setText(_translate("MainWindow", "Caloric Intake"))
         self.Development.setText(_translate("MainWindow", "Development"))
+
+    def open_Feeding(self):
+        dialog = QtWidgets.QDialog()
+        Feeding.setupUi(self, dialog)
+        dialog.exec_()
+        dialog.show()
 
 
 if __name__ == "__main__":
