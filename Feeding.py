@@ -1,6 +1,7 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from Backend import Create_Feeding
 
+
 class Ui_Feeding(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
@@ -67,10 +68,8 @@ class Ui_Feeding(object):
         self.Presets.setText(_translate("Dialog", "Preset Options"))
         self.label_2.setText(_translate("Dialog", "Feeding Time?"))
 
-        self.Add.clicked.connect(lambda: self.New_Job(Ui_Feeding.spinBox.value(), self.timeEdit.time()))
+        self.Add.clicked.connect(self.New_Job())
         self.Presets.clicked.connect(self.open_Presets)
-
-
 
         pass
         
