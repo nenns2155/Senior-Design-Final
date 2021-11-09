@@ -7,7 +7,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_Development(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(480, 320)
+        Dialog.resize(480, 310)
         self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
         self.buttonBox.setGeometry(QtCore.QRect(0, 280, 461, 31))
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)

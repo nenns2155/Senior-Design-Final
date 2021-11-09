@@ -24,9 +24,9 @@ GPIO.output(32,1)
 class Ui_Main(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
-        MainWindow.resize(480, 320)
-        MainWindow.setMinimumSize(QtCore.QSize(480, 320))
-        MainWindow.setMaximumSize(QtCore.QSize(480, 320))
+        MainWindow.resize(480, 310)
+        MainWindow.setMinimumSize(QtCore.QSize(480, 310))
+        MainWindow.setMaximumSize(QtCore.QSize(480, 310))
 
         font = QtGui.QFont()
         font.setFamily("8514oem")
