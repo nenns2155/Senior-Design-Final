@@ -67,7 +67,7 @@ class Ui_Feeding(object):
         self.Presets.setText(_translate("Dialog", "Preset Options"))
         self.label_2.setText(_translate("Dialog", "Feeding Time?"))
 
-        self.Add.clicked.connect(self.New_Job())
+        self.Add.clicked.connect(lambda: self.New_Job(Ui_Feeding.spinBox.value(), self.timeEdit.time()))
         self.Presets.clicked.connect(self.open_Presets)
 
 

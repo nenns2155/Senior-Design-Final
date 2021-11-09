@@ -84,12 +84,7 @@ class Ui_Main(object):
         dialog.exec_()
         dialog.show()
 
-    def New_Job(self):
-
-        calories = Feeding.spinBox.value()
-        time = Feeding.timeEdit.time()
-
-        Feeding.label.setText(str(time))
+    def New_Job(self,calories, time):
 
         Create_Feeding(calories, time)
 
