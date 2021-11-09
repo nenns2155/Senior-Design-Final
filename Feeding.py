@@ -70,14 +70,6 @@ class Ui_Feeding(object):
         self.Add.clicked.connect(self.New_Job())
         self.Presets.clicked.connect(self.open_Presets)
 
-    def New_Job(self):
-
-        calories = self.spinBox.value()
-        time = self.timeEdit.time()
-
-        self.label.setText(str(time))
-        
-        Create_Feeding(calories, time)
 
 
         pass
