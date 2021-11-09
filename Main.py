@@ -58,6 +58,8 @@ class Ui_Main(object):
         self.Feeding.clicked.connect(self.open_Feeding)
         self.Development.clicked.connect(self.open_Development)
 
+        
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         self.Feeding.setText(_translate("MainWindow", "Feeding"))
