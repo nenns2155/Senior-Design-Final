@@ -3,6 +3,23 @@ from Feeding import Ui_Feeding as Feeding
 from Development import Ui_Development as Development
 from Presets import Ui_Presets as Presets
 
+import RPi.GPIO as GPIO  # import GPIO
+import sys
+import time
+import numpy as np
+from hx711 import HX711
+from Backend import Read_Voltage, Calibration, Create_Feeding
+
+sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
+
+motor = 38
+dout=36 #16
+sck=35 #19
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(motor,GPIO.OUT) #Motor high low
+GPIO.setup(32, GPIO.OUT)
+GPIO.output(32,1)
+
 
 class Ui_Main(object):
     def setupUi(self, MainWindow):
