@@ -11,7 +11,7 @@ from Feeding2 import Ui_Dialog as Ui_Feeding
 from Presets2 import Ui_Dialog as Ui_Presets
 from Development2 import Ui_Dialog as Ui_Development
 
-from Backend import setFeeding, Calibration, Read_Voltage, Voltage_to_Weight
+from Backend import setFeeding, Read_Voltage
 
 import numpy as np
 
