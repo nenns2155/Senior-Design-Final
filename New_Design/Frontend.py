@@ -22,6 +22,7 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(38, GPIO.OUT)
 GPIO.setup(32, GPIO.OUT)
 
+GPIO.output(38,1)
 GPIO.output(32,1)
 
 
