@@ -157,4 +157,5 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     myapp = MainWindow()
     myapp.show()
+    GPIO.cleanup()
     sys.exit(app.exec())
