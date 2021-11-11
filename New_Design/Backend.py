@@ -33,12 +33,11 @@ def Read_Voltage(samples):
 
 def Voltage_to_Weight(voltage):
 
-    A = 190033
-    B = 262378.645
-    C = 256951.0917
+    A = 418.9713
+    B = 127892.9
 
-    return voltage
-    #return (voltage-B)/A
+   
+    return (voltage-B)/A
 
 
 # def Calibration():
