@@ -1,4 +1,4 @@
-import hx711 as hx
+from hx711 import HX711
 import RPi.GPIO as GPIO  # import GPIO
 
 def Read_Voltage(samples):
