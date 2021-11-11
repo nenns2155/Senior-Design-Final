@@ -129,8 +129,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 ############################################################
 ############################################################
 
-    def closeEvent(self):
+    def closeEvent(self, event):
         GPIO.cleanup()
+        event.accept()
 
     
         
