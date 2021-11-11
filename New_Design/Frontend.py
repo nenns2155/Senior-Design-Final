@@ -1,6 +1,7 @@
 import sys
 import os
 import subprocess
+import time
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
@@ -18,12 +19,11 @@ import numpy as np
 import RPi.GPIO as GPIO  # import GPIO
 
 GPIO.setmode(GPIO.BOARD)
-
+GPIO.setup(38, GPIO.OUT)
 GPIO.setup(32, GPIO.OUT)
 GPIO.output(32,1)
 
-GPIO.setup(38, GPIO.OUT)
-GPIO.output(38, 1)
+
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -87,17 +87,24 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def open_Presets(self):
         dialog = QtWidgets.QDialog()
         Ui_Presets.setupUi(self, dialog)
-        Ui_Feeding.retranslateUi(self, dialog)
+        Ui_Presets.retranslateUi(self, dialog)
 
         ### Further Implementation for Ui_Presets
-    
+        self.pushButton_1.clicked.connect(lambda: run())
 
-        
+        def run():
+            GPIO.output(38, 1)
+            time.sleep(.25)
+            GPIO.output(38,0)
+            pass
+            
         
         ### Ending Further Implementation for Ui_Presets
 
         dialog.exec_()
         dialog.show()
+
+    
 ############################################################
 ############################################################
 
