@@ -1,6 +1,7 @@
 from hx711 import HX711 
 
 def Read_Voltage(samples):
+    from hx711 import HX711 
     try:
         hx = HX711(dout_pin=36, pd_sck_pin=35)
 
