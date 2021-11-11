@@ -92,13 +92,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Ui_Presets.retranslateUi(self, dialog)
 
         ### Further Implementation for Ui_Presets
-        self.pushButton_1.clicked.connect(self.pushButton_1.setText("wow"))#lambda: run())
+        self.pushButton_1.clicked.connect(lambda: run())
 
-        # def run():
-        #     GPIO.output(38, 1)
-        #     time.sleep(.25)
-        #     GPIO.output(38, 0)
-        #     pass
+        def run():
+            GPIO.output(38, 1)
+            time.sleep(.25)
+            GPIO.output(38, 0)
+            pass
             
         
         ### Ending Further Implementation for Ui_Presets
@@ -140,6 +140,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def closeEvent(self, event):
         GPIO.cleanup()
+        GPIO.output(38,0)
         event.accept()
 
     
