@@ -153,14 +153,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
 if __name__ == '__main__':
-    try:
-        app = QApplication(sys.argv)
-        myapp = MainWindow()
-        myapp.show()
 
-    finally:
+    app = QApplication(sys.argv)
+    myapp = MainWindow()
+    myapp.show()
 
+    if app.exec_() == 1:
         GPIO.cleanup()
-        sys.exit(app.exec_())
+        sys.exit()
 
 
