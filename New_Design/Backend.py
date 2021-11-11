@@ -77,6 +77,18 @@ def setFeeding(hour, minute, calories):
     job.day.every
     cron.write()
 
+def setWeighing():
+    import sys
+    sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
+    from crontab import CronTab
+    
+    cron = CronTab(user = True)
+    job = cron.new(command = "python3 ~/Senior-Design-Final/New_Design/Weigh.py", comment = "weigh")
+    
+    job.minute.every(1)
+
+    cron.write()
+
 def clearFeedings():
     from crontab import CronTab
     cron = CronTab(user = True)

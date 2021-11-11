@@ -12,7 +12,7 @@ from Feeding2 import Ui_Dialog as Ui_Feeding
 from Presets2 import Ui_Dialog as Ui_Presets
 from Development2 import Ui_Dialog as Ui_Development
 
-from Backend import setFeeding, Read_Voltage
+from Backend import setFeeding, Read_Voltage, setWeighing
 
 import numpy as np
 
@@ -94,6 +94,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ### Further Implementation for Ui_Presets
         self.pushButton_1.clicked.connect(lambda: run())
         self.pushButton_2.clicked.connect(lambda: take_reading())
+        self.pushButton_3.clicked.connect(setWeighing())
 
         def run():
             GPIO.output(38, 1)
