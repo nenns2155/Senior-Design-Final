@@ -93,12 +93,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         ### Further Implementation for Ui_Presets
         self.pushButton_1.clicked.connect(lambda: run())
+        self.pushButton_2.clicked.connect(lambda: take_reading())
 
         def run():
             GPIO.output(38, 1)
             time.sleep(.25)
             GPIO.output(38, 0)
             pass
+
+        def take_reading():
+            
+            self.pushButton_2.setText(str(Read_Voltage(20)))
             
         
         ### Ending Further Implementation for Ui_Presets
