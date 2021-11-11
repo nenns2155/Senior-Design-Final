@@ -97,7 +97,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         def run():
             GPIO.output(38, 1)
-            time.sleep(.25)
+            time.sleep(1)
             GPIO.output(38, 0)
             pass
 
