@@ -145,7 +145,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
     def closeEvent(self, event):
         GPIO.cleanup()
-        GPIO.output(38,0)
         event.accept()
 
     
