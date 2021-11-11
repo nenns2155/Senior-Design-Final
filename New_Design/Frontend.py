@@ -94,7 +94,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ### Further Implementation for Ui_Presets
         self.pushButton_1.clicked.connect(lambda: run())
         self.pushButton_2.clicked.connect(lambda: take_reading())
-        self.pushButton_3.clicked.connect(setWeighing())
+        self.pushButton_3.clicked.connect(lambda: setWeighing())
 
         def run():
             GPIO.output(38, 1)
