@@ -129,6 +129,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 ############################################################
 ############################################################
 
+    def closeEvent(self):
+        GPIO.cleanup()
+
     
         
 
@@ -157,9 +160,6 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
     myapp = MainWindow()
     myapp.show()
-
-    if app.exec_() == 1:
-        GPIO.cleanup()
-        sys.exit()
+    sys.exit(app.exec_())
 
 
