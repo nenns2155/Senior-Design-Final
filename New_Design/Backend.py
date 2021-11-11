@@ -64,20 +64,22 @@ def Calibration():
 
 
 def setFeeding(hour, minute, calories):
+    import sys
+    sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
+    from crontab import CronTab
+    
+    cron = CronTab(user = True)
+    job = cron.new(command = "python3 ~/Senior-Design-Final/New_Design/Feeding_Program.py", comment = str(calories))
+    
+    job.minute.on(minute)
+    job.hour.on(hour)
+    job.day.every
+    cron.write()
 
-    print(hour)
-    print(minute)
-    print(calories)
-
-    # import sys
-    # sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
-    
-    # # from crontab import CronTab
-    
-    # cron = CronTab(user = True)
-    # job = cron.new(command = "print('Hit')", comment = str(calories))
-    
-    # job.minute.on(minute)
-    # job.hour.on(hour)
-    # job.dow.every(d)
-    # cron.write()
+def clearFeedings():
+    from crontab import CronTab
+    cron = CronTab(user = True)
+    for job in cron:
+        if str(job.comment) != "weigh":
+            cron.remove(job)
+    cron.write()

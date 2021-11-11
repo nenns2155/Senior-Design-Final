@@ -53,14 +53,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         def Update_List():
             
-            job = [0,1,2,3,4,5,6,7,8,9,10]
+            from crontab import CronTab
 
             ##Need to add contab job handling
-
-            for item in job:
-                self.listWidget.insertItem(0,str(item))
-            
-            pass
+            cron = CronTab(user = True)
+            for job in cron:
+                string = str(job.hour) + ":" + str(job.minute) + " - " + str(job.comment) + "  Calories"
+                self.listWidget.insertItem(0,string)
 
 
 
