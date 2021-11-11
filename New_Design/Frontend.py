@@ -15,6 +15,16 @@ from Backend import setFeeding, Read_Voltage
 
 import numpy as np
 
+import RPi.GPIO as GPIO  # import GPIO
+
+GPIO.setmode(GPIO.BOARD)
+
+GPIO.setup(32, GPIO.OUT)
+GPIO.output(32,1)
+
+GPIO.setup(38, GPIO.OUT)
+GPIO.output(38, 1)
+
 
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
@@ -80,7 +90,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Ui_Feeding.retranslateUi(self, dialog)
 
         ### Further Implementation for Ui_Presets
-
+    
 
         
         
