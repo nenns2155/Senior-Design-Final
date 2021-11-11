@@ -1,6 +1,8 @@
 from hx711 import HX711 
 import RPi.GPIO as GPIO  # import GPIO
 
+GPIO.setmode(GPIO.BOARD)
+
 def Read_Voltage(samples):
 
     GPIO.setup(32, GPIO.OUT)
