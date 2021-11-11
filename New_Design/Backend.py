@@ -1,4 +1,4 @@
-from hx711 import HX711
+from hx711 import HX711 
 import RPi.GPIO as GPIO  # import GPIO
 
 def Read_Voltage(samples):
@@ -37,7 +37,7 @@ def Voltage_to_Weight(voltage):
     B = 262378.645
     C = 256951.0917
 
-    return voltage
+    return (voltage-B)/A
 
 
 # def Calibration():
