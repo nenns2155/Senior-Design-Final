@@ -1,6 +1,7 @@
 import sys
 import os
 import subprocess
+import time
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
@@ -11,9 +12,20 @@ from Feeding2 import Ui_Dialog as Ui_Feeding
 from Presets2 import Ui_Dialog as Ui_Presets
 from Development2 import Ui_Dialog as Ui_Development
 
-from Backend import setFeeding, Calibration
+from Backend import setFeeding, Read_Voltage
 
 import numpy as np
+
+import RPi.GPIO as GPIO  # import GPIO
+
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(38, GPIO.OUT)
+GPIO.setup(32, GPIO.OUT)
+
+
+GPIO.output(32,1)
+
+
 
 
 class MainWindow(QMainWindow, Ui_MainWindow):
@@ -76,17 +88,29 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def open_Presets(self):
         dialog = QtWidgets.QDialog()
         Ui_Presets.setupUi(self, dialog)
-        Ui_Feeding.retranslateUi(self, dialog)
+        Ui_Presets.retranslateUi(self, dialog)
 
         ### Further Implementation for Ui_Presets
+        self.pushButton_1.clicked.connect(lambda: run())
+        self.pushButton_2.clicked.connect(lambda: take_reading())
 
+        def run():
+            GPIO.output(38, 1)
+            time.sleep(10)
+            GPIO.output(38, 0)
+            pass
 
-        
+        def take_reading():
+            
+            self.pushButton_2.setText(str(Read_Voltage(20)))
+            
         
         ### Ending Further Implementation for Ui_Presets
 
         dialog.exec_()
         dialog.show()
+
+    
 ############################################################
 ############################################################
 
@@ -104,10 +128,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ip = subprocess.run(['hostname','-I'], stdout=subprocess.PIPE).stdout.decode('utf-8')
 
         self.IP.clicked.connect(lambda: self.IP.setText(str(ip)))
-        self.Calibration.clicked.connect(lambda: Calibration())
+        self.Calibration.clicked.connect(lambda: take_reading())
 
 
-        
+        def take_reading():
+            
+            self.Calibration.setText(str(Read_Voltage(20)))
         
         ### Ending Further Implementation for Ui_Development
 
@@ -115,6 +141,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dialog.show()
 ############################################################
 ############################################################
+
+    def closeEvent(self, event):
+        GPIO.cleanup()
+        event.accept()
 
     
         
@@ -140,8 +170,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
 
 if __name__ == '__main__':
-    
+
     app = QApplication(sys.argv)
     myapp = MainWindow()
     myapp.show()
-    sys.exit(app.exec())
+    sys.exit(app.exec_())
+
+

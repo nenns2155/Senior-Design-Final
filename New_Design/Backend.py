@@ -1,6 +1,7 @@
+from hx711 import HX711 
+
 def Read_Voltage(samples):
     try:
-        GPIO.setmode(GPIO.BOARD) # set GPIO pin mode to BCM numbering
         hx = HX711(dout_pin=36, pd_sck_pin=35)
 
         lastreading = hx._read()
@@ -24,24 +25,24 @@ def Read_Voltage(samples):
                 count = count + 1
             
             lastreading = reading    
-            
-    
 
+        
+            
     except (KeyboardInterrupt, SystemExit):
         print('Bye :)')
 
 def Voltage_to_Weight(voltage):
 
-    A = 190033
-    B = 262378.645
-    C = 256951.0917
+    A = 418.9713
+    B = 127892.9
 
-    return str((voltage - B)/A)
+   
+    return (voltage-B)/A
 
 
-def Calibration():
+# def Calibration():
 
-    print("I should be doing a calibration")
+#     print("I should be doing a calibration")
     # weight = []
     # voltage = []
 

@@ -70,12 +70,12 @@ class Ui_Dialog(object):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "How many calories per day?"))
-        self.pushButton_4.setText(_translate("Dialog", "PushButton"))
-        self.pushButton_1.setText(_translate("Dialog", "PushButton"))
-        self.pushButton_2.setText(_translate("Dialog", "PushButton"))
-        self.pushButton_3.setText(_translate("Dialog", "PushButton"))
-        self.pushButton_54.setText(_translate("Dialog", "PushButton"))
-        self.pushButton_5.setText(_translate("Dialog", "PushButton"))
+        self.pushButton_4.setText(_translate("Dialog", "PushButton4"))
+        self.pushButton_1.setText(_translate("Dialog", "PushButton1"))
+        self.pushButton_2.setText(_translate("Dialog", "PushButton2"))
+        self.pushButton_3.setText(_translate("Dialog", "PushButton3"))
+        self.pushButton_54.setText(_translate("Dialog", "PushButton54"))
+        self.pushButton_5.setText(_translate("Dialog", "PushButton5"))
 
 
 if __name__ == "__main__":
