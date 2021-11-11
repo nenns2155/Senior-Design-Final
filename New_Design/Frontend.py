@@ -11,7 +11,7 @@ from Feeding2 import Ui_Dialog as Ui_Feeding
 from Presets2 import Ui_Dialog as Ui_Presets
 from Development2 import Ui_Dialog as Ui_Development
 
-from Backend import setFeeding, Calibration
+from Backend import setFeeding, Calibration, Read_Voltage, Voltage_to_Weight
 
 import numpy as np
 
@@ -105,10 +105,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ip = subprocess.run(['hostname','-I'], stdout=subprocess.PIPE).stdout.decode('utf-8')
 
         self.IP.clicked.connect(lambda: self.IP.setText(str(ip)))
-        self.Calibration.clicked.connect(lambda: Calibration())
+        self.Calibration.clicked.connect(lambda: take_reading())
 
 
-        
+        def take_reading():
+            
+            self.Calibration.setText(str(Read_Voltage(20)))
         
         ### Ending Further Implementation for Ui_Development
 

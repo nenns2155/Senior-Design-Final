@@ -1,3 +1,5 @@
+import hx711 as hx
+
 def Read_Voltage(samples):
     try:
         GPIO.setmode(GPIO.BOARD) # set GPIO pin mode to BCM numbering
@@ -25,8 +27,6 @@ def Read_Voltage(samples):
             
             lastreading = reading    
             
-    
-
     except (KeyboardInterrupt, SystemExit):
         print('Bye :)')
 
@@ -36,7 +36,7 @@ def Voltage_to_Weight(voltage):
     B = 262378.645
     C = 256951.0917
 
-    return str((voltage - B)/A)
+    return voltage
 
 
 def Calibration():
@@ -75,7 +75,7 @@ def setFeeding(hour, minute, calories):
     # # from crontab import CronTab
     
     # cron = CronTab(user = True)
-    # job = cron.new(command = "print('Hit')", comment = str(calories))
+    # job = cron.new(command = "print( 'Hit')", comment = str(calories))
     
     # job.minute.on(minute)
     # job.hour.on(hour)
