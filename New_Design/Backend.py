@@ -1,14 +1,10 @@
 from hx711 import HX711 
-import RPi.GPIO as GPIO  # import GPIO
-
-GPIO.setmode(GPIO.BOARD)
 
 def Read_Voltage(samples):
 
-    GPIO.setup(32, GPIO.OUT)
-    GPIO.output(32,1)
+    # GPIO.setup(32, GPIO.OUT)
+    # GPIO.output(32,1)
     try:
-        GPIO.setmode(GPIO.BOARD) # set GPIO pin mode to BCM numbering
         hx = HX711(dout_pin=36, pd_sck_pin=35)
 
         lastreading = hx._read()
@@ -20,7 +16,6 @@ def Read_Voltage(samples):
                 lastreading = reading
                 pass
             elif count == samples:
-                GPIO.output(32,0)
                 return Voltage_to_Weight(sum/samples)
             elif reading < 0:
                 pass
