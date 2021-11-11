@@ -1,4 +1,5 @@
 import hx711 as hx
+import RPi.GPIO as GPIO  # import GPIO
 
 def Read_Voltage(samples):
     try:
@@ -39,9 +40,9 @@ def Voltage_to_Weight(voltage):
     return voltage
 
 
-def Calibration():
+# def Calibration():
 
-    print("I should be doing a calibration")
+#     print("I should be doing a calibration")
     # weight = []
     # voltage = []
 
