@@ -70,7 +70,7 @@ def setFeeding(hour, minute, calories):
     from crontab import CronTab
     
     cron = CronTab(user = True)
-    job = cron.new(command = "python3 ~/Senior-Design-Final/New_Design/Feeding_Program.py", comment = str(calories))
+    job = cron.new(command = "python3 ~/Senior-Design-Final/New_Design/Background_Feed_Now.py", comment = str(calories))
     
     job.minute.on(minute)
     job.hour.on(hour)
