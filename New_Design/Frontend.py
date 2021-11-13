@@ -26,8 +26,6 @@ GPIO.setup(32, GPIO.OUT)
 GPIO.output(32,1)
 
 
-
-
 class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
