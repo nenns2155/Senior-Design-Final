@@ -11,17 +11,15 @@ GPIO.output(32,1)
 
 
 t1 = time.time()
-print("hit")
-w = Read_Voltage(20)
-print("hit")
+w = Read_Voltage(20) 
 t2 = time.time()
 t = (t1 + t2)/2
-
-t=5
-w=100
 
 with open('weights.csv', 'a') as file:
     writer = csv.writer(file)
     writer.writerow([t,w])
+
+if KeyboardInterrupt():
+    GPIO.cleanup()
 
 GPIO.cleanup()
