@@ -9,19 +9,14 @@ GPIO.setup(32, GPIO.OUT)
 
 GPIO.output(32,1)
 
-try:
-    t1 = time.time()
-    w = Read_Voltage(20) 
-    t2 = time.time()
-    t = (t1 + t2)/2
 
-    with open('weights.csv', 'a') as file:
-        writer = csv.writer(file)
-        writer.writerow([t,w])
+t1 = time.time()
+w = Read_Voltage(20) 
+t2 = time.time()
+t = (t1 + t2)/2
 
-
-except (KeyboardInterrupt, SystemExit):
-        GPIO.cleanup()
-        print('Bye :)')
+with open('/home/pi/Senior-Design-Final/New_Design/weights.csv', 'a') as file:
+    writer = csv.writer(file)
+    writer.writerow([t,w])
 
 GPIO.cleanup()
