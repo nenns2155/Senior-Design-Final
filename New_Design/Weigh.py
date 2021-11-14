@@ -11,7 +11,9 @@ GPIO.output(32,1)
 
 
 t1 = time.time()
+print("hit")
 w = Read_Voltage(20)
+print("hit")
 t2 = time.time()
 t = (t1 + t2)/2
 
