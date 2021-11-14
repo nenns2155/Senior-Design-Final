@@ -25,6 +25,7 @@ def Read_Voltage(samples):
                 count = count + 1
             
             lastreading = reading    
+            print(reading)
 
         
             
