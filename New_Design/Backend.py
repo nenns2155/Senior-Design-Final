@@ -79,6 +79,7 @@ def setFeeding(hour, minute, calories):
     cron.write()
 
 def setWeighing():
+    print('hit')
     import sys
     sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
     from crontab import CronTab
