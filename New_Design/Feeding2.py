@@ -75,7 +75,7 @@ class Ui_Dialog(object):
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
         self.label.setText(_translate("Dialog", "How many calories per day?"))
         self.Add.setText(_translate("Dialog", "Add Time"))
-        self.Presets.setText(_translate("Dialog", "Preset Options"))
+        self.Presets.setText(_translate("Dialog", "Clear Schedule"))
         self.label_2.setText(_translate("Dialog", "Feeding Time?"))
 
 
