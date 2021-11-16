@@ -70,6 +70,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             pass
 
         def Update_List():
+
+            entry = []
         
             cron = CronTab(user = True)
             for job in cron:
@@ -79,12 +81,13 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     time = temp[:temp.find('p')-1]
                     
                     if time == "@daily":
-                        entry = 'Noon'
+                        entry.append("Noon")
                         
                     else:
-                        entry = ExpressionDescriptor(time)
+                        entry.append(str(ExpressionDescriptor(time)))
                     
-                    self.listWidget.addItems(entry)
+                   
+            self.listWidget.addItems(entry)
 
 
 
