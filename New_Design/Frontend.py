@@ -74,8 +74,15 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             cron = CronTab(user = True)
             for job in cron:
                 if str(job.comment) != "weigh":
+
                     temp=str(job)
-                    print(ExpressionDescriptor(temp[:temp.find('p')-1]))
+                    time = temp[:temp.find('p')-1])
+                    
+                    if time == "@Daily":
+                        entry = 'Noon'
+                        print(entry)
+                    else:
+                        print(ExpressionDescriptor(time)
                     
 
 

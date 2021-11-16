@@ -3,11 +3,6 @@ import croniter
 from cron_descriptor import ExpressionDescriptor
 from crontab import CronTab
 
-# job = "1 5 * * *"
+job = "@Daily"
 
-# print(ExpressionDescriptor(job))
-
-cron = CronTab(user = True)
-
-for job in cron:
-    print(job)
+print(ExpressionDescriptor(job))
