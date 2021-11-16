@@ -34,19 +34,31 @@ class Ui_Dialog(object):
         time = []
         weight = []
         
-        with open('/home/pi/Senior-Design-Final/New_Design/weights.csv') as file:
+        with open('weights.csv') as file:
             reader = csv.reader(file, delimiter=',')
 
             for row in reader:
-                time.append(row[1])
-                weight.append(row[0])
+                time.append(row[0])
+                weight.append(row[1])
         
         self.figure.clear()
     
         ax = self.figure.add_subplot(111)
-    
-        ax.plot(weight, time)
 
+        import numpy as np
+        np.random.seed(19680801)
+
+    
+        N = 50
+        x = np.random.rand(N)
+        y = np.random.rand(N)
+        colors = np.random.rand(N)
+        area = (30 * np.random.rand(N))**2  # 0 to 15 point radii
+
+        plt.scatter(x, y, s=area, c=colors, alpha=0.5)
+        plt.xticks(x)
+        # plt.show()
+    
         self.canvas.draw()
 
    
