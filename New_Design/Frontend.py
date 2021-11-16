@@ -88,7 +88,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         entry = str(ExpressionDescriptor(time))
                         label = str(job.comment)
 
-                    self.listWidget.addItem(entry & label)
+                    self.listWidget.addItem(entry+str(job.comment))
 
                     
             
