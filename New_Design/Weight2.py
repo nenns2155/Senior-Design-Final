@@ -30,6 +30,21 @@ class Ui_Dialog(object):
 
         Dialog.setLayout(layout)
 
+        # random data
+        data = [random.random() for i in range(10)]
+        # clearing old figure
+
+        self.figure.clear()
+        # create an axis
+
+        ax = self.figure.add_subplot(111)
+        # plot data
+
+        ax.plot(data, '*-')
+
+        # refresh canvas
+        self.canvas.draw()
+
    
 # driver code
 if __name__ == "__main__":
