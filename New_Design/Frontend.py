@@ -1,8 +1,12 @@
+sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
+
 import sys
 import os
 import subprocess
 import time
 import random
+from crontab import CronTab
+
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
@@ -66,15 +70,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             pass
 
         def Update_List():
-            
-            job = [0,1,2,3,4,5,6,7,8,9,10]
-
-            ##Need to add contab job handling
-
-            for item in job:
-                self.listWidget.insertItem(0,str(item))
         
-            pass
+            cron = CronTab(user = True)
+            for job in cron:
+                if str(job.comment) != "weigh":
+                    self.listWidget.insertItem(job)
+
 
 
         ### Ending Further Implementation for Ui_Feeding
