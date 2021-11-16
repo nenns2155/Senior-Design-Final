@@ -74,7 +74,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             cron = CronTab(user = True)
             for job in cron:
                 if str(job.comment) != "weigh":
-                    print(str(job))
+                    temp=str(job)
+                    print(temp[:temp.find('p')])
                     # print(ExpressionDescriptor(job))
 
 
