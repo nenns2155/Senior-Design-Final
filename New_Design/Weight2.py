@@ -13,7 +13,10 @@ class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
 
-        Dialog.resize(480,320)
+        Dialog.resize(480,340)
+
+        Dialog.setWindowFlags(QtCore.Qt.FramelessWindowHint)
+
    
         self.figure = plt.figure()
 
