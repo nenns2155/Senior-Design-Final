@@ -53,6 +53,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dialog = QtWidgets.QDialog()
         Ui_Feeding.setupUi(self, dialog)
         Ui_Feeding.retranslateUi(self, dialog)
+        lambda: Update_List()
 
         ### Further Implementation for Ui_Feeding
         self.Presets.clicked.connect(lambda: Clear())
@@ -82,11 +83,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     
                     if time == "@daily":
                         entry = "At Noon"
-                        label = str(job.comment)
-                        
+        
                     else:
                         entry = str(ExpressionDescriptor(time))
-                        label = str(job.comment)
 
                     self.listWidget.addItem(entry + " Feed " + str(job.comment) + " Calories")
 
