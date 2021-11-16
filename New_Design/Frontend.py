@@ -55,7 +55,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Ui_Feeding.retranslateUi(self, dialog)
 
         ### Further Implementation for Ui_Feeding
-        self.Presets.clicked.connect(lambda: self.open_Presets())
+        self.Presets.clicked.connect(lambda: Clear())
         self.Add.clicked.connect(lambda: GrabValues())
         self.Add.clicked.connect(lambda: Update_List())
         
@@ -89,6 +89,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         label = str(job.comment)
 
                     self.listWidget.addItem(entry + " Feed " + str(job.comment) + " Calories")
+
+        def Clear():
+            self.listWidget.Clear()
 
                     
             
