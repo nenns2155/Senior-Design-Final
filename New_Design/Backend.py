@@ -80,9 +80,6 @@ def setFeeding(hour, minute, calories):
 
 def setWeighing():
     print('hit')
-    import sys
-    sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
-    from crontab import CronTab
     
     cron = CronTab(user = True)
     job = cron.new(command = "sudo python3 /home/pi/Senior-Design-Final/New_Design/Weigh.py", comment = "weigh")
