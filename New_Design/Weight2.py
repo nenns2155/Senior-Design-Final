@@ -5,35 +5,35 @@ from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as Navigatio
 import matplotlib.pyplot as plt
 import random
 
-class Window(QDialog):
+from PyQt5 import QtCore
+
+
+class Ui_Dialog(QDialog):
        
-   
     def __init__(self, parent=None):
-        super(Window, self).__init__(parent)
+        super(Ui_Dialog, self).__init__(parent)
 
         self.resize(480,320)
    
         self.figure = plt.figure()
 
         self.canvas = FigureCanvas(self.figure)
-
-        # self.toolbar = NavigationToolbar(self.canvas, self)
-   
-        # self.button = QPushButton('Plot')
-
-        # self.button.clicked.connect(self.plot)
    
         layout = QVBoxLayout()
-           
-        # layout.addWidget(self.toolbar)
+
+        self.button = QPushButton('Close')
+
+        self.button.clicked.connect(self.reject)
            
         layout.addWidget(self.canvas)
            
-        # layout.addWidget(self.button)
+        layout.addWidget(self.button)
            
         self.setLayout(layout)
 
         self.plot()
+
+        
    
     # action called by thte push button
     def plot(self):
@@ -60,7 +60,7 @@ if __name__ == '__main__':
     app = QApplication(sys.argv)
    
     # creating a window object
-    main = Window()
+    main = Ui_Dialog()
        
     # showing the window
     main.show()

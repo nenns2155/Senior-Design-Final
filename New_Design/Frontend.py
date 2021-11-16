@@ -12,6 +12,7 @@ from Main2 import Ui_MainWindow
 from Feeding2 import Ui_Dialog as Ui_Feeding
 from Presets2 import Ui_Dialog as Ui_Presets
 from Development2 import Ui_Dialog as Ui_Development
+from Weight2 import Ui_Dialog as Ui_Weight
 
 from Backend import setFeeding, Read_Voltage, setWeighing
 
@@ -82,6 +83,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dialog.show()
 
     def open_Weight(self):
+
+        dialog = QtWidgets.QDialog()
+        Ui_Weight.__init__(self, dialog)
+        # Ui_Weight.retranslateUi(self, dialog)
 
         
         
