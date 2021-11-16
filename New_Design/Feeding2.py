@@ -23,6 +23,9 @@ class Ui_Dialog(object):
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
         self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName("buttonBox")
+
+
+
         self.label = QtWidgets.QLabel(Dialog)
         self.label.setGeometry(QtCore.QRect(10, 40, 291, 41))
         font = QtGui.QFont()
@@ -52,9 +55,18 @@ class Ui_Dialog(object):
         self.Add = QtWidgets.QPushButton(Dialog)
         self.Add.setGeometry(QtCore.QRect(380, 100, 93, 71))
         self.Add.setObjectName("Add")
+
         self.Presets = QtWidgets.QPushButton(Dialog)
         self.Presets.setGeometry(QtCore.QRect(170, 280, 93, 28))
         self.Presets.setObjectName("Presets")
+
+        self.Update = QtWidgets.QPushButton(Dialog)
+        self.Update.setObjectName("Update")
+
+        self.buttonBox.addButton(self.Presets)
+        self.buttonBox.addButton(self.Update)
+
+
         self.label_2 = QtWidgets.QLabel(Dialog)
         self.label_2.setGeometry(QtCore.QRect(110, 120, 291, 41))
         font = QtGui.QFont()
