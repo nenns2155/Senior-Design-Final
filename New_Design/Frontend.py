@@ -2,6 +2,7 @@ import sys
 import os
 import subprocess
 import time
+import random
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
@@ -72,7 +73,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
             for item in job:
                 self.listWidget.insertItem(0,str(item))
-            
+        
             pass
 
 
@@ -84,6 +85,23 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         dialog = QtWidgets.QDialog()
         Ui_Weight.setupUi(self, dialog)
+
+        def plot():
+            
+            # random data
+            data = [random.random() for i in range(10)]
+
+            # clearing old figure
+            self.figure.clear()
+
+            # create an axis
+            ax = self.figure.add_subplot(111)
+
+            # plot data
+            ax.plot(data, '*-')
+
+            # refresh canvas
+            self.canvas.draw()
         
 ############################################################
 ############################################################
