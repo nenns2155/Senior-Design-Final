@@ -27,12 +27,9 @@ class Ui_Dialog(object):
         layout.addWidget(self.canvas)
            
         layout.addWidget(self.button)
-           
+
         Dialog.setLayout(layout)
 
-        self.plot()
-   
-    
    
 # driver code
 if __name__ == "__main__":
