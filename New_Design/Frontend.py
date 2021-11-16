@@ -89,6 +89,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
                     self.listWidget.addItem(entry + " Feed " + str(job.comment) + " Calories")
 
+
         def Clear():
             self.listWidget.clear()
             clearFeedings()
