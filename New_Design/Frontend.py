@@ -84,7 +84,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     else:
                         entry = ExpressionDescriptor(time)
                     
-                    self.listWidget.insertItems(entry)
+                    self.listWidget.addItems(entry)
 
 
 
