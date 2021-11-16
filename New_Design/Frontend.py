@@ -75,7 +75,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             cron = CronTab(user = True)
             for job in cron:
                 if str(job.comment) != "weigh":
-                    self.listWidget.insertItem(job)
+                    self.listWidget.insertItem(str(job))
 
 
 
