@@ -1,4 +1,3 @@
-
 import sys
 sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
 
@@ -7,7 +6,7 @@ import subprocess
 import time
 import random
 from crontab import CronTab
-
+from cron_descriptor import ExpressionDescriptor
 
 from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
@@ -75,7 +74,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             cron = CronTab(user = True)
             for job in cron:
                 if str(job.comment) != "weigh":
-                    self.listWidget.addItem(str(job) & str(job.comment))
+                    print(ExpressionDescriptor(job))
+
+
+            self.listWidget.addItem(str(job) & str(job.comment))
 
 
 
