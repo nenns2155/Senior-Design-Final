@@ -74,10 +74,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             cron = CronTab(user = True)
             for job in cron:
                 if str(job.comment) != "weigh":
-                    print(ExpressionDescriptor(job))
+                    print(str(job))
+                    # print(ExpressionDescriptor(job))
 
 
-            self.listWidget.addItem(str(job) & str(job.comment))
+            # self.listWidget.addItem(str(job) & str(job.comment))
 
 
 
