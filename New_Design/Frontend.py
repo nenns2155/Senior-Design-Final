@@ -83,9 +83,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def open_Weight(self):
 
         dialog = QtWidgets.QDialog()
-        Ui_Feeding.setupUi(self, dialog)
+        Ui_Weight.setupUi(self, dialog)
         
-        pass
 ############################################################
 ############################################################
     
