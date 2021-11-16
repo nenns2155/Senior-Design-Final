@@ -19,7 +19,7 @@ from Presets2 import Ui_Dialog as Ui_Presets
 from Development2 import Ui_Dialog as Ui_Development
 from Weight2 import Ui_Dialog as Ui_Weight
 
-from Backend import setFeeding, Read_Voltage, setWeighing
+from Backend import clearFeedings, setFeeding, Read_Voltage, setWeighing
 
 import numpy as np
 
@@ -91,13 +91,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     self.listWidget.addItem(entry + " Feed " + str(job.comment) + " Calories")
 
         def Clear():
-            self.listWidget.Clear()
+            self.listWidget.clear()
+            clearFeedings()
 
-                    
-            
-
-
-
+        
         ### Ending Further Implementation for Ui_Feeding
         dialog.exec_()
         dialog.show()
