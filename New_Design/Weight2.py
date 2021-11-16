@@ -8,12 +8,11 @@ import random
 from PyQt5 import QtCore
 
 
-class Ui_Dialog(QDialog):
-       
-    def __init__(self, parent=None):
-        super(Ui_Dialog, self).__init__(parent)
+class Ui_Dialog(object):
+    def setupUi(self, Dialog):
+        Dialog.setObjectName("Dialog")
 
-        self.resize(480,320)
+        Dialog.resize(480,320)
    
         self.figure = plt.figure()
 
@@ -23,17 +22,15 @@ class Ui_Dialog(QDialog):
 
         self.button = QPushButton('Close')
 
-        self.button.clicked.connect(self.reject)
+        self.button.clicked.connect(Dialog.reject)
            
         layout.addWidget(self.canvas)
            
         layout.addWidget(self.button)
            
-        self.setLayout(layout)
+        Dialog.setLayout(layout)
 
         self.plot()
-
-        
    
     # action called by thte push button
     def plot(self):
@@ -54,16 +51,11 @@ class Ui_Dialog(QDialog):
         self.canvas.draw()
    
 # driver code
-if __name__ == '__main__':
-       
-    # creating apyqt5 application
+if __name__ == "__main__":
+    import sys
     app = QApplication(sys.argv)
-   
-    # creating a window object
-    main = Ui_Dialog()
-       
-    # showing the window
-    main.show()
-   
-    # loop
+    Dialog = QDialog()
+    ui = Ui_Dialog()
+    ui.setupUi(Dialog)
+    Dialog.show()
     sys.exit(app.exec_())
