@@ -81,14 +81,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     time = temp[:temp.find('p')-1]
                     
                     if time == "@daily":
-                        entry = "Noon"
+                        entry = "At Noon"
                         label = str(job.comment)
                         
                     else:
                         entry = str(ExpressionDescriptor(time))
                         label = str(job.comment)
 
-                    self.listWidget.addItem(entry + "   " + str(job.comment) + " Calories")
+                    self.listWidget.addItem(entry + " Feed " + str(job.comment) + " Calories")
 
                     
             
