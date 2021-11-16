@@ -63,8 +63,6 @@ def Voltage_to_Weight(voltage):
     # print('B equals:', B)
     # print('C equals:', C)
 
-
-
 def setFeeding(hour, minute, calories):
     import sys
     sys.path.append('/home/pi/.local/lib/python2.7/site-packages')
