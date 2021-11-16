@@ -38,8 +38,8 @@ class Ui_Dialog(object):
             reader = csv.reader(file, delimiter=',')
 
             for row in reader:
-                time.append(row[0])
-                weight.append(row[1])
+                time.append(row[1])
+                weight.append(row[0])
         
         self.figure.clear()
     
