@@ -171,8 +171,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ip = subprocess.run(['hostname','-I'], stdout=subprocess.PIPE).stdout.decode('utf-8')
         ip=str(ip)
         ip=ip[:15]
-        
-        self.IP.clicked.connect(lambda: self.IP.setText(15))
+
+        self.IP.clicked.connect(lambda: self.IP.setText(ip))
         self.Calibration.clicked.connect(lambda: take_reading())
 
 
