@@ -100,6 +100,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             ax.plot(data, '*-')
             # refresh canvas
             self.canvas.draw()
+
+        dialog.exec_()
+        dialog.show()
         
 ############################################################
 ############################################################
