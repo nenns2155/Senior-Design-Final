@@ -173,7 +173,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ip=ip[:15]
 
         self.IP.clicked.connect(lambda: self.IP.setText(ip))
-        self.Calibration.clicked.connect(lambda: take_reading())
+        self.Calibration.clicked.connect(lambda: setWeighing())
 
 
         def take_reading():
