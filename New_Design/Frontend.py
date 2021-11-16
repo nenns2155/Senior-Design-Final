@@ -82,11 +82,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                         entry = 'Noon'
                         print(entry)
                     else:
-                        print(ExpressionDescriptor(time)
-                    
-
-
-            # self.listWidget.addItem(str(job) & str(job.comment))
+                        print(ExpressionDescriptor(time))
 
 
 
