@@ -77,15 +77,14 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
                     temp=str(job)
                     time = temp[:temp.find('p')-1]
-                    print(len(time))
                     
                     if time == "@daily":
                         entry = 'Noon'
-                        print(entry)
+                        
                     else:
-                        print(ExpressionDescriptor(time))
+                        entry = ExpressionDescriptor(time)
                     
-                    print("")
+                    self.listWidget.insertItems(entry)
 
 
 
