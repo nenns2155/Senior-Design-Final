@@ -53,13 +53,12 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dialog = QtWidgets.QDialog()
         Ui_Feeding.setupUi(self, dialog)
         Ui_Feeding.retranslateUi(self, dialog)
-        lambda: Update_List()
 
         ### Further Implementation for Ui_Feeding
         self.Presets.clicked.connect(lambda: Clear())
         self.Add.clicked.connect(lambda: GrabValues())
         self.Add.clicked.connect(lambda: Update_List())
-        
+        self.pushButton.clicked.connect(lambda: Update_List())
 
         def GrabValues():
             calories = self.spinBox.value()
