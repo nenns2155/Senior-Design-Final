@@ -79,7 +79,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                     time = temp[:temp.find('p')]
                     print(time)
                     
-                    if time == "@Daily":
+                    if time == "@daily":
                         entry = 'Noon'
                         print(entry)
                     else:
