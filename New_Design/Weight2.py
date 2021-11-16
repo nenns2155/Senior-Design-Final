@@ -1,4 +1,5 @@
 import sys
+import csv
 from PyQt5.QtWidgets import QDialog, QApplication, QPushButton, QVBoxLayout
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
@@ -30,19 +31,22 @@ class Ui_Dialog(object):
 
         Dialog.setLayout(layout)
 
-        # random data
-        data = [random.random() for i in range(10)]
-        # clearing old figure
+        time = []
+        weight = []
+        
+        with open('/home/pi/Senior-Design-Final/New_Design/weights.csv', 'a') as file:
+            reader = csv.reader(file, delimiter=',')
 
+            for row in reader:
+                time.append(row[0])
+                weight.append(row[1])
+        
         self.figure.clear()
-        # create an axis
-
+    
         ax = self.figure.add_subplot(111)
-        # plot data
+    
+        ax.plot(weight, time)
 
-        ax.plot(data, '*-')
-
-        # refresh canvas
         self.canvas.draw()
 
    
