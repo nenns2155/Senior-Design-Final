@@ -74,8 +74,6 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.listWidget.insertItem(0,str(item))
             
             pass
-        
-
 
 
         ### Ending Further Implementation for Ui_Feeding
@@ -85,10 +83,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
     def open_Weight(self):
 
         dialog = QtWidgets.QDialog()
-        Ui_Weight.__init__(self, dialog)
-        # Ui_Weight.retranslateUi(self, dialog)
-
-        
+        Ui_Feeding.setupUi(self, dialog)
         
         pass
 ############################################################
