@@ -20,7 +20,7 @@ class Ui_Dialog(object):
         self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
         self.buttonBox.setGeometry(QtCore.QRect(0, 280, 461, 31))
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
-        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Cancel|QtWidgets.QDialogButtonBox.Ok)
+        self.buttonBox.setStandardButtons(QtWidgets.QDialogButtonBox.Ok)
         self.buttonBox.setObjectName("buttonBox")
         self.Calibration = QtWidgets.QPushButton(Dialog)
         self.Calibration.setGeometry(QtCore.QRect(10, 10, 201, 61))
@@ -31,7 +31,6 @@ class Ui_Dialog(object):
 
         self.retranslateUi(Dialog)
         self.buttonBox.accepted.connect(Dialog.accept)
-        self.buttonBox.rejected.connect(Dialog.reject)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
 
     def retranslateUi(self, Dialog):
