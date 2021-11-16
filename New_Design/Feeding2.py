@@ -10,13 +10,14 @@
 
 from types import FrameType
 from PyQt5 import QtCore, QtGui, QtWidgets
+from matplotlib.widgets import Widget
 
 
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
         Dialog.resize(480, 300)
-        Dialog.setWindwoFlage(QtCore.Qt.FramelessWindowHint)
+        Widget.setWindwoFlage(QtCore.Qt.FramelessWindowHint)
         self.buttonBox = QtWidgets.QDialogButtonBox(Dialog)
         self.buttonBox.setGeometry(QtCore.QRect(250, 280, 211, 31))
         self.buttonBox.setOrientation(QtCore.Qt.Horizontal)
