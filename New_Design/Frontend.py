@@ -7,6 +7,9 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
 from PyQt5 import QtWidgets
 
+from pyqtgraph import PlotWidget, plot
+import pyqtgraph as pg
+
 from Main2 import Ui_MainWindow
 from Feeding2 import Ui_Dialog as Ui_Feeding
 from Presets2 import Ui_Dialog as Ui_Presets
@@ -34,6 +37,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ### Further Implementation for MainWindow
         self.Feeding.clicked.connect(self.open_Feeding)
         self.Development.clicked.connect(self.open_Development)
+        self.Weight.clicked.connect(self.open_Weight)
 
 
         ### Ending Further Implementation for MainWindow      
@@ -71,13 +75,26 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 self.listWidget.insertItem(0,str(item))
             
             pass
+        
 
 
 
         ### Ending Further Implementation for Ui_Feeding
-        
         dialog.exec_()
         dialog.show()
+
+    def open_Weight(self):
+
+        self.graphWidget = pg.PlotWidget()
+        self.setCentralWidget(self.graphWidget)
+
+        hour = [1,2,3,4,5,6,7,8,9,10]
+        temperature = [30,32,34,32,33,31,29,32,35,45]
+
+        # plot data: x, y values
+        self.graphWidget.plot(hour, temperature)
+        
+        pass
 ############################################################
 ############################################################
     
