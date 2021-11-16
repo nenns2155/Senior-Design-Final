@@ -80,7 +80,7 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.label.setText(_translate("Dialog", "How many calories?"))
+        self.label.setText(_translate("Dialog", "How Many Calories?"))
         self.Add.setText(_translate("Dialog", "Add Time"))
         self.label_2.setText(_translate("Dialog", "Feeding Time?"))
         self.Presets.setText(_translate("Dialog", "Clear Schedule"))

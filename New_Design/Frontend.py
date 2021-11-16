@@ -169,8 +169,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ### Further Implementation for Ui_Development
         os.system("hostname -I")
         ip = subprocess.run(['hostname','-I'], stdout=subprocess.PIPE).stdout.decode('utf-8')
-
-        self.IP.clicked.connect(lambda: self.IP.setText(str(ip)))
+        ip=str(ip)
+        ip=ip[:15]
+        
+        self.IP.clicked.connect(lambda: self.IP.setText(15))
         self.Calibration.clicked.connect(lambda: take_reading())
 
 
