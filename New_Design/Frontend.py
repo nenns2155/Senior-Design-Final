@@ -55,7 +55,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Ui_Feeding.retranslateUi(self, dialog)
 
         ### Further Implementation for Ui_Feeding
-        self.Presets.clicked.connect(lambda: Clear())
+        self.Presets.clicked.connect(lambda: self.open_Presets())
+        # self.Presets.clicked.connect(lambda: Clear())
         self.Add.clicked.connect(lambda: GrabValues())
         self.Add.clicked.connect(lambda: Update_List())
         self.pushButton.clicked.connect(lambda: Update_List())
