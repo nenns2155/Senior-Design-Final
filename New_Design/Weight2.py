@@ -4,7 +4,7 @@ from PyQt5.QtWidgets import QDialog, QApplication, QPushButton, QVBoxLayout
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg as FigureCanvas
 from matplotlib.backends.backend_qt5agg import NavigationToolbar2QT as NavigationToolbar
 import matplotlib.pyplot as plt
-import random
+import numpy as np
 
 from PyQt5 import QtCore
 
@@ -41,26 +41,19 @@ class Ui_Dialog(object):
             reader = csv.reader(file, delimiter=',')
 
             for row in reader:
-                time.append(row[0])
-                weight.append(row[1])
+                print(row)
+                time.append(float(row[0]))
+                weight.append(float(row[1]))
         
         self.figure.clear()
     
         ax = self.figure.add_subplot(111)
 
-        import numpy as np
-        np.random.seed(19680801)
-
-    
-        N = 50
-        x = np.random.rand(N)
-        y = np.random.rand(N)
-        colors = np.random.rand(N)
-        area = (30 * np.random.rand(N))**2  # 0 to 15 point radii
-
-        plt.bar(x, y)
-        plt.xticks(x)
-        # plt.show()
+        calories = weight
+        plt.bar(time, calories, width = .4)
+        plt.xticks(np.arange(0,25,4))
+        plt.xlabel('Time of Day (24 hour)')
+        plt.ylabel('Calories')
     
         self.canvas.draw()
 

@@ -10,10 +10,14 @@ GPIO.setup(32, GPIO.OUT)
 GPIO.output(32,1)
 
 
-t1 = time.time()
+t= time.localtime()
+curHr = float(time.strftime('%H', t))
+curMin = float(time.strftime('%M', t))
+t = float(curHr+curMin/60)
+
 w = Read_Voltage(20) 
-t2 = time.time()
-t = (t1 + t2)/2
+
+
 
 with open('/home/pi/Senior-Design-Final/New_Design/weights.csv', 'a') as file:
     writer = csv.writer(file)
