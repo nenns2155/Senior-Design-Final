@@ -181,7 +181,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
 
         def feed_now():
             GPIO.output(38,1)
-            time.sleep(4)
+            time.sleep(5)
             GPIO.output(38,0)
 
   
