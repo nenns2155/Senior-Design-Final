@@ -173,8 +173,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ip=str(ip)
         ip=ip[:15]
 
-        self.IP.clicked.connect(lambda: self.IP.setText(ip))
-        self.Calibration.clicked.connect(lambda: take_reading())
+        # self.IP.clicked.connect(lambda: self.IP.setText(ip))
+        # self.Calibration.clicked.connect(lambda: take_reading())
+
+        self.IP.clicked.connect(self.IP.settext(str(Read_Voltage())))
+        self.Calibration.clicked.connect(lambda: feed_now())
+
+        def feed_now():
+            GPIO.output(38,1)
+            time.sleep(2)
+            GPIO.output(38,0)
 
   
         def take_reading():
