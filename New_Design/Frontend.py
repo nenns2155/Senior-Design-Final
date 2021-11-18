@@ -176,7 +176,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.IP.clicked.connect(lambda: self.IP.setText(ip))
         # self.Calibration.clicked.connect(lambda: take_reading())
 
-        self.IP.clicked.connect(self.IP.setText(lambda: str(Read_Voltage(20))))
+        self.IP.clicked.connect(lambda: self.IP.setText(str(Read_Voltage(20))))
         self.Calibration.clicked.connect(lambda: feed_now())
 
         def feed_now():
