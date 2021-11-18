@@ -173,9 +173,9 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ip=ip[:15]
 
         self.IP.clicked.connect(lambda: self.IP.setText(ip))
-        self.Calibration.clicked.connect(self.Calibration.setText(Read_Voltage()))
+        self.Calibration.clicked.connect(lambda: take_reading())
 
-
+  
         def take_reading():
             
             self.Calibration.setText(str(Read_Voltage(20)))
