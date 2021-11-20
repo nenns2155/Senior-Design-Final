@@ -173,15 +173,16 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ip=str(ip)
         ip=ip[:15]
 
-        # self.IP.clicked.connect(lambda: self.IP.setText(ip))
-        # self.Calibration.clicked.connect(lambda: take_reading())
 
-        self.IP.clicked.connect(lambda: self.IP.setText(str(Read_Voltage(20))))
-        self.Calibration.clicked.connect(lambda: feed_now())
+        # self.IP.clicked.connect(lambda: self.IP.setText(ip)) ## turn these on for final?
+        # self.Calibration.clicked.connect(lambda: take_reading()) ##turn these on for final?
+
+        self.IP.clicked.connect(lambda: self.IP.setText(str(Read_Voltage(20)))) ##IP button reads in scale value
+        self.Calibration.clicked.connect(lambda: feed_now())  ##Calibration button feeds for time below
 
         def feed_now():
             GPIO.output(38,1)
-            time.sleep(10)
+            time.sleep(10) # <- how to set how long to feed (diagnostics)
             GPIO.output(38,0)
 
   
@@ -200,24 +201,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         GPIO.cleanup()
         event.accept()
 
-    
-        
 
-# class Feeding(QDialog, Ui_Feeding):
-#     def __init__(self):
-#         super().__init__()
-#         self.setupUi(self)
-
-#         ### slots and signals for mainwindow
-#         self.Add.clicked.connect(self.Presets.setText("wow"))
-
-#     def open_Presets(self):
-#         print("hit")
-#         dialog = QtWidgets.QDialog()
-#         Ui_Presets.setupUi(self, dialog)
-#         Ui_Feeding.retranslateUi(self, dialog)
-#         dialog.exec_()
-#         dialog.show()
 
 
 
