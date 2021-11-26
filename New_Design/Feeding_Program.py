@@ -13,7 +13,7 @@ for job in cron:
             calories = int(job.comment)
             break
 
-feedtime = calories #DO SOMETHING HERE DUMMY!
+feedtime = (float(calories) + 12.13)/22.277
 
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(38,GPIO.OUT)
