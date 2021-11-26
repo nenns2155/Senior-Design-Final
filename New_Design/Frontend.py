@@ -79,10 +79,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 if str(job.comment) != "weigh":
 
                     temp=str(job)
-                    time = temp[:temp.find('p')-1]
+                    time = temp[:temp.find('p')]
                     
                     if time == "@daily":
-                        entry = "At Noon"
+                        entry = "At Midnight"
         
                     else:
                         entry = str(ExpressionDescriptor(time))
