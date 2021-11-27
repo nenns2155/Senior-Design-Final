@@ -12,7 +12,7 @@ from PyQt5.QtCore import Qt
 from PyQt5.QtWidgets import QApplication, QDialog, QMainWindow
 from PyQt5 import QtWidgets
 
-
+from Weigh import weigh
 from Main2 import Ui_MainWindow
 from Feeding2 import Ui_Dialog as Ui_Feeding
 from Presets2 import Ui_Dialog as Ui_Presets
@@ -174,11 +174,11 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         ip=ip[:15]
 
 
-        # self.IP.clicked.connect(lambda: self.IP.setText(ip)) ## turn these on for final?
+        self.IP.clicked.connect(lambda: self.IP.setText(ip)) ## turn these on for final?
         # self.Calibration.clicked.connect(lambda: take_reading()) ##turn these on for final?
 
-        self.IP.clicked.connect(lambda: self.IP.setText(str(Read_Voltage(20)))) ##IP button reads in scale value
-        self.Calibration.clicked.connect(lambda: feed_now())  ##Calibration button feeds for time below
+        # self.IP.clicked.connect(lambda: self.IP.setText(str(Read_Voltage(20)))) ##IP button reads in scale value
+        self.Calibration.clicked.connect(lambda: self.Calibration.setText(str(weigh())))
 
         def feed_now():
             GPIO.output(38,1)

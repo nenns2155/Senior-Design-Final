@@ -24,7 +24,7 @@ class Ui_Dialog(object):
         self.buttonBox.setObjectName("buttonBox")
         self.Calibration = QtWidgets.QPushButton(Dialog)
         self.Calibration.setGeometry(QtCore.QRect(10, 10, 201, 61))
-        self.Calibration.setObjectName("Calibration")
+        self.Calibration.setObjectName("Weigh")
         self.IP = QtWidgets.QPushButton(Dialog)
         self.IP.setGeometry(QtCore.QRect(10, 80, 201, 61))
         self.IP.setObjectName("IP")
@@ -36,7 +36,7 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
-        self.Calibration.setText(_translate("Dialog", "Calibration"))
+        self.Calibration.setText(_translate("Dialog", "Weigh"))
         self.IP.setText(_translate("Dialog", "Network Information"))
 
 
