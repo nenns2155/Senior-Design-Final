@@ -79,7 +79,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
                 if str(job.comment) != "weigh":
 
                     temp=str(job)
-                    time = temp[:temp.find('p')]
+                    time = temp[:(temp.find('p')-1)]
                     
                     if time == "@daily":
                         entry = "At Midnight"
@@ -104,12 +104,10 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         dialog = QtWidgets.QDialog()
         Ui_Weight.setupUi(self, dialog)
 
-        lambda: plot()
-
         def plot():
             
             # random data
-            data = [random.random() for i in range(10)]
+            data = [0,1,2,3,4,5,6,7,8,9]
             # clearing old figure
             self.figure.clear()
             # create an axis
@@ -118,6 +116,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             ax.plot(data, '*-')
             # refresh canvas
             self.canvas.draw()
+
+        lambda: plot()
 
         dialog.exec_()
         dialog.show()
