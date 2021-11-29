@@ -185,7 +185,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
             time.sleep(1) # <- how to set how long to feed (diagnostics)
             GPIO.output(38,0)
 
-  
+    
         def take_reading():
             
             self.Calibration.setText(str(Read_Voltage(20)))

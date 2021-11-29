@@ -37,7 +37,7 @@ class Ui_Dialog(object):
         time = []
         weight = []
         
-        with open('weights.csv') as file:
+        with open('/home/pi/Senior-Design-Final/New_Design/weights.csv') as file:
             reader = csv.reader(file, delimiter=',')
 
             for row in reader:
