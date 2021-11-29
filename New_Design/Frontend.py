@@ -168,17 +168,17 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         Ui_Development.retranslateUi(self, dialog)
 
         ### Further Implementation for Ui_Development
-        os.system("hostname -I")
-        ip = subprocess.run(['hostname','-I'], stdout=subprocess.PIPE).stdout.decode('utf-8')
-        ip=str(ip)
-        ip=ip[:15]
+        # os.system("hostname -I")
+        # ip = subprocess.run(['hostname','-I'], stdout=subprocess.PIPE).stdout.decode('utf-8')
+        # ip=str(ip)
+        # ip=ip[:15]
 
 
-        self.IP.clicked.connect(lambda: self.IP.setText(ip)) ## turn these on for final?
+        # self.IP.clicked.connect(lambda: self.IP.setText(ip)) ## turn these on for final?
         # self.Calibration.clicked.connect(lambda: take_reading()) ##turn these on for final?
 
         # self.IP.clicked.connect(lambda: self.IP.setText(str(Read_Voltage(20)))) ##IP button reads in scale value
-        self.Calibration.clicked.connect(lambda: self.Calibration.setText(str(weigh())))
+        # self.Calibration.clicked.connect(lambda: self.Calibration.setText(str(weigh())))
 
         def feed_now():
             GPIO.output(38,1)
