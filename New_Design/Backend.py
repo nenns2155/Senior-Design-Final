@@ -2,7 +2,7 @@ from hx711 import HX711
 
 def Read_Voltage(samples):
     try:
-        hx = HX711(dout_pin=38, pd_sck_pin=37)
+        hx = HX711(dout_pin=36, pd_sck_pin=35)
 
         lastreading = hx._read()
         count = 0
