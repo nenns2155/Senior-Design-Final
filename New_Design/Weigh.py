@@ -18,8 +18,6 @@ def weigh():
 
     w = Read_Voltage(20) 
 
-
-
     with open('/home/pi/Senior-Design-Final/New_Design/weights.csv', 'a') as file:
         writer = csv.writer(file)
         writer.writerow([t,w])
