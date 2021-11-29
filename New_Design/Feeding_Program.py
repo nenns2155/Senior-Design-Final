@@ -24,5 +24,3 @@ time.sleep(5)
 GPIO.output(38,0)
     
 GPIO.cleanup()
-
-python3 /home/pi/Senior-Design-FInal/New_Design/Feeding_Program.py
