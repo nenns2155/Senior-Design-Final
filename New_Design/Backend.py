@@ -3,7 +3,7 @@ import time
 
 def Read_Voltage(samples):
     try:
-        hx = HX711(dout_pin=36, pd_sck_pin=35)
+        hx = HX711(dout_pin=29, pd_sck_pin=31)
 
         lastreading = hx._read()
         count = 0
