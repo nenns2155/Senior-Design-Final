@@ -1,4 +1,5 @@
 from hx711 import HX711 
+import time
 
 def Read_Voltage(samples):
     try:
@@ -25,6 +26,7 @@ def Read_Voltage(samples):
                 count = count + 1
 
             print(reading)
+            time.sleep(.1)
             
             lastreading = reading    
             
