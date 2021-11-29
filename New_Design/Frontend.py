@@ -177,8 +177,8 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         # self.Calibration.clicked.connect(lambda: take_reading()) ##turn these on for final?
 
         # self.IP.clicked.connect(lambda: self.IP.setText(str(Read_Voltage(20)))) ##IP button reads in scale value
-        self.Calibration.clicked.connect(lambda: feed_now())
-        # self.Calibration.clicked.connect(lambda: take_reading())
+        # self.Calibration.clicked.connect(lambda: feed_now())
+        self.Calibration.clicked.connect(lambda: take_reading())
 
         def feed_now():
             GPIO.output(38,1)
