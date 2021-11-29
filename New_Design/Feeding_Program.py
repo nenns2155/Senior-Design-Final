@@ -19,7 +19,8 @@ GPIO.setmode(GPIO.BOARD)
 GPIO.setup(38,GPIO.OUT)
 
 GPIO.output(38,1)
-time.sleep(feedtime)
+time.sleep(5)
+# time.sleep(feedtime)
 GPIO.output(38,0)
     
 GPIO.cleanup()
